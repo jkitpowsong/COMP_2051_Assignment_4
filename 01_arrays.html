@@ -1,0 +1,108 @@
+<html>
+	<head>
+	<title>Assignment 4-1 </title>
+	<!-- QUESTION 1 :Write JavaScript statements to accomplish each of the following tasks-->
+
+	<script type="text/javascript">
+	// A. Display the value of the 7th element of array f;
+
+	document.write(f[6]);
+
+	// B. Initialize each of the five elements of one-dimensional array g to 8.
+	for (var i = 0; i < 5; i++)
+		g[i] = 8;
+
+	// C. Total the elements of array c, which contains 100 numeric elements.
+	for (var i = 0; i < 100; i++)
+		total += parseInt(c[i]);
+
+	// D. Copy 11-element array a into the first portion of array b, which contains 34 elements.
+	for (var i = 0; i < a.length; i++)
+		b[i] = a[i];
+
+	// E. Determine and print the smallest and largest values contained in 99-element floatingpoint array w.
+	var highestNum = w[0];
+	var lowesrtNum = w[0];
+	for (var i = 1; i < 99; i++)
+	{
+		if(w[i] > highestNum)
+			highestNum = w[i];
+		if (w[i] < lowesrtNum) 
+			lowesrtNum = w[i];
+	}
+	document.write(highestNum + " " + lowesrtNum);
+
+	// F. Consider a two-by-three array t that will store integers.
+	//============================================================
+	// G. Write a statement that declares and creates array t.
+	var t = new Array(2);
+	t[0] = new Array(3);
+	t[1] = new Array(3);
+
+	// H. How many rows does t have?
+	2
+
+	// I. How many columns does t have?
+	3
+
+	// J. How many elements does t have?
+	6
+
+	// K. Write the names of all the elements in the second row of t.
+	t[1][0],t[1][1],t[1][2]
+
+	// L. Write the names of all the elements in the third column of t.
+	t[0][2],t[1][2]
+
+	// M. Write a single statement that sets the elements of t in row 1 and column 2 to zero.
+	t[1][2] = 0;
+
+	// N. Write a series of statements that initializes each element of t to zero. Do not use a repetition structure.
+	t[0][1] = 0;
+	t[0][1] = 0;
+	t[0][2] = 0;
+	t[1][0] = 0;
+	t[1][1] = 0;
+	t[1][2] = 0;
+
+	// O. Write a nested for statement that initializes each element of t to zero.
+	for(var i = 0; i < t.length;i++ )
+		for(var a = 0; a < t[i].lenght;a++)
+			t[i][a] = 0;
+	// P. Write a series of statements that determines and prints the smallest value in array t.
+	for(var a = 0; a < t.lenght; a++)
+		for(var b = 0; y < t[a].length;b++)
+			if (t[a][b] < small)
+				small = t[a][b];
+	document.write(small);
+
+	// Q. Write a statement that displays the elements of the first row of t.
+	document.write(t[0][0] + " " + t[0][1] + " " + t[0][2]);
+
+	// R. Write a statement that totals the elements of the fourth column of t.
+	// no answer
+
+	// S. Write a series of statements that prints the array t in neat, tabular format. List the column subscripts as headings across the top, and list the row subscripts at the left of each row.
+	document.write("<table border = '1'>");
+	document.write("<colgroup><col span = '4'>" + "</colgroup>" );
+	document.write("<tr><td>&nbsp</td><th>0</th><th>1</th><th>2</th></tr>");
+
+	for(var i in t)
+	{
+		document.write("<tr><th>" + i = "</th>");
+		for (var j in t[i])
+			document.write("<td>" + t[i][j] + "</td>");
+		document.write("</tr>");
+	}
+	document.write("</table");
+
+	</script>
+	</head>
+
+
+	<body>
+
+	</body>
+		
+
+</html>

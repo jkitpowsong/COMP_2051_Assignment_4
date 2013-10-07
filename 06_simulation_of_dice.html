@@ -1,0 +1,47 @@
+<html>
+	<head>
+	<title>Assignment 4-6 </title>
+	<!-- QUESTION 6 :Write a script to simulate the rolling of two dice. The script should use Math.random to roll the first die and again to roll the second die. The sum of the two values should then be calculated. [Note: Since each die can show an integer value from 1 to 6, the sum of the values will vary from 2 to 12, with 7 being the most frequent sum, and 2 and 12 the least frequent sums. Your program should roll the dice 36,000 times. Use a one-dimensional array to tally the numbers of times each possible sum appears. Display the results in an XHTML table. Also determine whether the totals are reasonable (e.g., there are six ways to roll a 7, so approximately 1/6 of all the rolls should be 7).]
+-->
+
+	<script type="text/javascript">
+	var total = [ , , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	var face1;
+	var face2;
+
+	for (var x = 1; x <= 36000; x++)
+	{
+		face1 = rollDie();
+		face2 = rollDie();
+		++total[face1+ face2];
+	}
+
+	outputResults();
+
+	//Execute only when call
+	function rollDie()
+	{
+		return Math.floor(1 + Math.random() * 6);
+	}
+
+	function outputResults()
+	{
+		document.write( "<table border = \"1\">" );
+		document.write(
+		"<tr><th width = '100'>Sum of Dice" +
+		"<th width = \"200\">Total Times Rolled</tr>" );
+
+		for ( var i = 2; i < total.length; i++ )
+			document.write( "<tr><td>" + i + "<td>" +
+		total[ i ] + "</tr>" );
+
+		document.write( "</table>" );
+	}
+		
+	</script>
+	</head>
+	<body>
+	</body>
+		
+
+</html>

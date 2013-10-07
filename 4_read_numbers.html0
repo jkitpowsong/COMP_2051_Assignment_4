@@ -1,0 +1,63 @@
+<html>
+	<head>
+	<title>Assignment 4-4 </title>
+	<!-- QUESTION 4 :Use a one-dimensional array to solve the following problem: Read in 20 numbers, each of which is between 10 and 100. As each number is read, print it only if it is not a duplicate of a number that has already been read. Provide for the “worst case,” in which all 20 numbers are different. Use the smallest possible array to solve this problem.
+-->
+
+	<script type="text/javascript">
+		var a;
+		var m = 0;
+		var count = 0;
+		var numberString = "";
+
+		a = new Array(19);
+		for (var k = 0; k < a.length; k++)
+			a[k] = 0;
+
+		function start()
+		{
+			var input;
+			var form = document.getElementById("number");
+			for (count = 0; count < 20; count++)
+			{
+				input = parseInt(prompt("Please enter a number"));
+
+				//validate the input
+				if (input < 10 || input > 100)
+				{
+					form.output.value = "It is invalid!";
+					continue;
+				}
+
+				for (var i = 0; i < a.length; i++)
+				{
+					if (input == a[i])
+					{
+						break;
+					}
+
+					else if (a[i] == 0)
+					{
+						numberString += parseInt(input) + " ";
+						a[m++] = input;
+						break;
+					}
+				}
+
+				form.output.value = ("Count of items entered: " + parseInt(count + 1) + "\n");
+
+				form.output.value +=  "Result : " +numberString;
+			}
+		}
+	</script>
+	</head>
+
+
+	<body onload = "start()">
+		<form id="number" action="">
+			<textarea name = "output"
+		 rows ="4" cols= "40"> </textarea>
+	</body>
+		
+
+</html>

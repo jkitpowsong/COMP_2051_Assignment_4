@@ -1,0 +1,56 @@
+
+<html>
+	<head>
+	<title>Assignment 4-10 to 12 </title>
+	<!-- QUESTION 10 to 12 :
+-->
+
+	<script type="text/javascript">
+start();
+
+    function start()
+    {
+    var a = new Array( 1000 );
+    
+    for ( var z = 1; z < a.length; ++z )
+    a[ z ] = 1;
+    var count = sieveOfEratosthenes( a );
+    
+    document.write(
+    "<p><strong>The number of prime numbers up to " +
+    (a.length - 1) + " is:</strong> " + count );
+    document.writeln(
+    "<p><strong>The prime numbers are:</strong>" +
+    "<br />" );
+    
+    for ( z = 2; z < a.length; ++z )
+     {
+     if ( a[ z ] == 1 )
+     document.write( z + " " );
+     } // end for
+     } // end function start
+    
+     function sieveOfEratosthenes( theArray )
+     {
+    
+     var count = 0;
+     for ( var i = 2; i < theArray.length; ++i )
+     if ( theArray[ i ] == 1 )
+     {
+     ++count;    
+    
+    for ( var j = i * i; j < theArray.length; ++j )
+     if ( j % i == 0 )
+    theArray[ j ] = 0;
+    } // end if
+    return count;
+    } 
+
+	</script>
+	</head>
+	<body>
+		
+	</body>
+		
+
+</html>

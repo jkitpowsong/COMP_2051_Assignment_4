@@ -1,0 +1,102 @@
+
+<html>
+	<head>
+	<title>Assignment 4-9 </title>
+	<!-- QUESTION 9 :
+-->
+
+	<script type="text/javascript">
+var person, product;
+var sales = [ [ 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0 ],
+[ 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0 ] ];
+var totalProducts = [ 0, 0, 0, 0, 0 ];
+var numForms = [ 0, 0, 0, 0, 0 ];
+
+function addToTotals()
+{
+	var form = document.getElementById( "myForm" );
+	var s = parseFloat( form.sales.value );
+	person = parseInt(
+	form.salesPerson.value );
+	product = parseInt( form.product.value );
+
+ if ( person >= 1 && person < 5 && product >= 1 && product < 6)
+ {
+	 if ( numForms[person] == 5 )
+	 window.alert( "Salesperson " + person +
+	" has already submitted the maximum number of forms." )
+	 else
+	 {
+		 ++numForms[ person ];
+		 sales[ person - 1 ][ product - 1 ] += s;
+	 } // end else
+ } 
+
+
+ else
+ window.alert( "Invalid input!" );
+
+ summary();
+ } 
+
+function summary()
+ {
+	 var form = document.getElementById( "myForm" );
+	 var total = 0.0;
+
+	 for ( var j = 0; j < totalProducts.length; ++j )
+	 totalProducts[ j ] = 0;
+
+	 var result = "Product\t\t1\t2\t3\t4\t5\tTotal";
+
+ for ( var row = 0; row < sales.length; ++row )
+ {
+	 result += "\nSalesperson " + ( row + 1 );
+	 total = 0.0;
+
+ for ( var col = 0; col <
+ sales[ row ].length; ++col )
+ {
+	 total += sales[ row ][ col ];
+	 result += "\t" + sales[ row ][ col ];
+	 totalProducts[ col ] += sales[ row ][ col ];
+ } 
+
+ result += "\t" + total;
+ } 
+ 
+ result += "\nTotal\t";
+
+ for ( var k = 0; k < totalProducts.length; ++k )
+ result += "\t" + totalProducts[ k ];
+
+form.output.value = result;
+ } 
+	</script>
+	</head>
+	<body>
+		<form id = "myForm" action = "">
+	 <table border = "0">
+	 <colgroup>
+	 <col align = "right" />
+	 </colgroup>
+
+	 <tr><td>Enter salesperson number: </td>
+	 <td><input name = "salesPerson" type = "text" /></td>
+	  </tr>
+	<tr><td>Enter product number:</td>
+	 <td><input name = "product" type = "text" /></td>
+	 </tr>
+	 <tr><td>Enter sales amount:</td>
+	 <td><input name = "sales" type = "text" /></td>
+	 </tr> <tr><td><input type = "button" value = "Enter Sales Figure" onclick= "addToTotals()" /></td></tr>
+
+	 <tr><td colspan = "2">
+	 <textarea name = "output" rows = "7" cols = "70"></textarea> </td>
+	</tr>
+	 </table>
+ </form>
+	</body>
+		
+
+</html>
